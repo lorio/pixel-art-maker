@@ -6,21 +6,20 @@ var N = $('#inputWidth').val();
 //get value of gridHeight and gridWidth
 // When size is submitted by the user, call makeGrid()
 function makeGrid() {
-  var tblBody = document.createElement("tbody");
-  var tbl = $('#pixelCanvas');
+  var tbl = document.getElementById('#pixelCanvas');
   for (var i = 0; i <= M; i++){
-    var tr = tbl.insertRow();
+    var newRow = tbl.insertRow(0);
     for (var j = 0; j <= N; j++) {
-      var td = tr.insertCell();
-      row.appendChild('cell');
+      var newCell = newRow.insertCell(0);
     }
   }
   tbl.appendTo(tblBody); 
   };
   $('#sizePicker').submit(function (evt) {
-    evt.preventDefault();
-    makeGrid();
-       // add bg color to cell
+    evt.preventDefault()
+  }); 
+    makeGrid()
+      // add bg color to cell
    $('cell').click(function(evt){
-       $(evt.target).css('background', color);
-      }
+       $(evt.target).css('background', color)
+      });

@@ -20,7 +20,8 @@ function makeGrid() {
   $('#sizePicker').submit(function (evt) {
     evt.preventDefault();
     makeGrid();
+  });
        // add bg color to cell
    $('cell').click(function(evt){
-       $(evt.target).css('background', color);
-      }
+       $(evt.target).css('background', color)
+      };
