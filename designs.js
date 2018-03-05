@@ -7,20 +7,27 @@ var N = $('#inputWidth').val();
 // When size is submitted by the user, call makeGrid()
 
 function makeGrid() {
-  var tbl = document.getElementById('table id="pixelCanvas"');
-  var tbody = document.createElement('tbody');
+  var tbl = document.getElementById('pixelCanvas');
+  var tbod = document.createElement('tbody');
+  var row = document.createElement('tr');
+  var col = document.createElement('td');
+  
   for (var i = 0; i <= M; i++){
-    var newRow = tbl.insertRow(0);
+ //   tbod.appendChild(row);
+ //append columns   
     for (var j = 0; j <= N; j++) {
-      var newCell = newRow.insertCell(0);
+      row.appendChild(col);
+ //     tbl.appendChild(tbod);
       }
     }
-    tbl.appendChild(tbody);
+    tbod.appendChild(row); 
+    tbl.appendChild(tbod);
   };
   $('#sizePicker').submit(function (evt) {
-    evt.preventDefault()
+    evt.preventDefault();
+    makeGrid();
   }); 
-    makeGrid()
+    
       // add bg color to cell
    $('cell').click(function(evt){
        $(evt.target).css('background', color)
