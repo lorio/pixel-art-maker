@@ -1,27 +1,29 @@
 // Select color input
 var color = $('#colorPicker').val(); 
 // Select size input
-var M = $('#inputHeight').val();
-var N = $('#inputWidth').val();
-//get value of gridHeight and gridWidth
-// When size is submitted by the user, call makeGrid()
 
+
+// When size is submitted by the user, call makeGrid()
 function makeGrid() {
-  var tbl = document.getElementById('pixelCanvas');
-  var tbod = document.createElement('tbody');
-  var row = document.createElement('tr');
-  var col = document.createElement('td');
-  
-  for (var i = 0; i <= M; i++){
- //   tbod.appendChild(row);
+var inX, inY, row, col, tbl, tbod;
+//get value of gridHeight and gridWidth
+inY = $('#inputHeight').val();
+inX = $('#inputWidth').val();
+
+tbl = $('#pixelCanvas');
+//tbod = $('<tbody></tbody>');
+var tbody =$('<tbody></tbody>');
+tbody.appendTo(tbl);
+/*  
+  for (var i = 0; i <= inY; i++){
+    row = $('tr');
+    tbod.append(row);
  //append columns   
-    for (var j = 0; j <= N; j++) {
-      row.appendChild(col);
- //     tbl.appendChild(tbod);
+    for (var j = 0; j <= inX; j++) {
+      col = $('td');
+      row.append(col);
       }
-    }
-    tbod.appendChild(row); 
-    tbl.appendChild(tbod);
+    }*/
   };
   $('#sizePicker').submit(function (evt) {
     evt.preventDefault();
