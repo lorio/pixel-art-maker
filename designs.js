@@ -1,19 +1,14 @@
-// Select color input
-var color = $('#colorPicker').val(); 
-// Select size input
 
+var w, h, row, col, tbl, newcolor;
 
 // When size is submitted by the user, call makeGrid()
 
-var w, h, row, col, tbl;
-//get value of gridHeight and gridWidth
-
 tbl = $('#pixelCanvas');
-
 
 $('#sizePicker').submit(function makegrid(evt) {
     evt.preventDefault();  
     tbl.empty();
+//get value of gridHeight and gridWidth
   h = $('#inputHeight').val();
   w = $('#inputWidth').val();
   for (var x = 1; x <= h; x++){
@@ -25,13 +20,10 @@ $('#sizePicker').submit(function makegrid(evt) {
       tbl.find('tr').last().append(col);
       }
     }
-
   });
+ // add bg color to cell from browse color-picker
 
-   
-
-    
-      // add bg color to cell
- //  $('cell').click(function(evt){
-  //     $(evt.target).css('background', color)
- //     });
+   $(tbl).on('click','td', function(fill){
+    newColor = $('#colorPicker').val();
+          $(fill.target).css('background-color',newColor)     
+        } );
