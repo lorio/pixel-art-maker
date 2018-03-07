@@ -7,15 +7,15 @@ var color = $('#colorPicker').val();
 
 var w, h, row, col, tbl;
 //get value of gridHeight and gridWidth
-h = $('#inputHeight').val();
-w = $('#inputWidth').val();
+
 tbl = $('#pixelCanvas');
 
 
 $('#sizePicker').submit(function makegrid(evt) {
     evt.preventDefault();  
-    tbl.children().remove(); 
-
+    tbl.empty();
+  h = $('#inputHeight').val();
+  w = $('#inputWidth').val();
   for (var x = 1; x <= h; x++){
     row = ('<tr>');
     tbl.append(row);
@@ -25,6 +25,7 @@ $('#sizePicker').submit(function makegrid(evt) {
       tbl.find('tr').last().append(col);
       }
     }
+
   });
 
    
